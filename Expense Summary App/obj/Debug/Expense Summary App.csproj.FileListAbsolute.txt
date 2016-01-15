@@ -1,0 +1,10 @@
+c:\users\james.houck\documents\visual studio 2015\Projects\Expense Summary App\Expense Summary App\bin\Debug\Expense Summary App.exe.config
+c:\users\james.houck\documents\visual studio 2015\Projects\Expense Summary App\Expense Summary App\bin\Debug\Expense Summary App.exe
+c:\users\james.houck\documents\visual studio 2015\Projects\Expense Summary App\Expense Summary App\bin\Debug\Expense Summary App.pdb
+c:\users\james.houck\documents\visual studio 2015\Projects\Expense Summary App\Expense Summary App\obj\Debug\Expense Summary App.csprojResolveAssemblyReference.cache
+c:\users\james.houck\documents\visual studio 2015\Projects\Expense Summary App\Expense Summary App\obj\Debug\Expense_Summary_App.Properties.Resources.resources
+c:\users\james.houck\documents\visual studio 2015\Projects\Expense Summary App\Expense Summary App\obj\Debug\Expense Summary App.csproj.GenerateResource.Cache
+c:\users\james.houck\documents\visual studio 2015\Projects\Expense Summary App\Expense Summary App\obj\Debug\Expense Summary App.exe
+c:\users\james.houck\documents\visual studio 2015\Projects\Expense Summary App\Expense Summary App\obj\Debug\Expense Summary App.pdb
+c:\users\james.houck\documents\visual studio 2015\Projects\Expense Summary App\Expense Summary App\obj\Debug\Expense_Summary_App.frmMain.resources
+C:\Users\james.houck\Documents\Visual Studio 2015\Projects\Expense Summary App\Expense Summary App\obj\Debug\Expense_Summary_App.frmAddItem.resources
