@@ -19,10 +19,11 @@ namespace Expense_Summary_App
 
         #region Buttons
 
-        //Add Item button code, pops a new instance of 
+        //Add Item button code, pops a new instance of AddItem form 
         private void btnAddItem_Click(object sender, EventArgs e)
         {
             frmAddItem frmAddItem  = new frmAddItem();
+            ExpenseItem expenseItem = new ExpenseItem();
             frmAddItem.ShowDialog();
         }
 

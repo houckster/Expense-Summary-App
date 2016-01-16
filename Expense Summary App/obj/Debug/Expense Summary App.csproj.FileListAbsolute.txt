@@ -8,3 +8,13 @@ c:\users\james.houck\documents\visual studio 2015\Projects\Expense Summary App\E
 c:\users\james.houck\documents\visual studio 2015\Projects\Expense Summary App\Expense Summary App\obj\Debug\Expense Summary App.pdb
 c:\users\james.houck\documents\visual studio 2015\Projects\Expense Summary App\Expense Summary App\obj\Debug\Expense_Summary_App.frmMain.resources
 C:\Users\james.houck\Documents\Visual Studio 2015\Projects\Expense Summary App\Expense Summary App\obj\Debug\Expense_Summary_App.frmAddItem.resources
+C:\Users\James Houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\bin\Debug\Expense Summary App.exe.config
+C:\Users\James Houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\obj\Debug\Expense Summary App.exe
+C:\Users\James Houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\obj\Debug\Expense Summary App.pdb
+C:\Users\James Houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\bin\Debug\Expense Summary App.exe
+C:\Users\James Houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\bin\Debug\Expense Summary App.pdb
+C:\Users\James Houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\obj\Debug\Expense Summary App.csprojResolveAssemblyReference.cache
+C:\Users\James Houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\obj\Debug\Expense_Summary_App.frmMain.resources
+C:\Users\James Houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\obj\Debug\Expense_Summary_App.frmAddItem.resources
+C:\Users\James Houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\obj\Debug\Expense_Summary_App.Properties.Resources.resources
+C:\Users\James Houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\obj\Debug\Expense Summary App.csproj.GenerateResource.Cache

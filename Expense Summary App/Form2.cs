@@ -31,5 +31,14 @@ namespace Expense_Summary_App
                 txtTotalMiles.Text = "";
             }
         }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            /*Instantiate an object instance of the ExpenseItem class using the 4 argument contructor, 
+            pulling in the values from the form*/
+            ExpenseItem expenseItem = new ExpenseItem(dateTimePicker1.ToString(), txtDescription.Text.ToString(), txtTotalMiles.Text.ToString(), comboBox1.Text.ToString());
+            this.Close();
+        }
     }
+    
 }
