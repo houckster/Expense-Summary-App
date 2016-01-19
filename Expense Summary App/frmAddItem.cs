@@ -12,7 +12,6 @@ namespace Expense_Summary_App
 {
     public partial class frmAddItem : Form
     {
-
         //instantiate an instance of the main form
         public frmMain frmMain;
 
