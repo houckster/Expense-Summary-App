@@ -8,10 +8,8 @@ namespace Expense_Summary_App
 {
     public class ExpenseItem
     {
-        
         //***set the properties for the ExpenseItem object
         public string date;
-        //image -- TODO: figure out datatype for file later
         public string description;
         public string miles;
         public string expenseType;
@@ -19,9 +17,11 @@ namespace Expense_Summary_App
         public string rate;
         public string totalExpense;
         public string mileageTotal;
+        //image -- TODO: figure out datatype for file later
 
-        //***Constructor that takes 4 arguments to assign all properties for Expense Item object.
-        public ExpenseItem (string date1, string description1, string miles1, string expenseType1, string expenseCode1, string rate1, string totalExpense1, string mileageTotal1)
+        //***Constructor that takes 8 arguments to assign all properties for Expense Item object.
+        public ExpenseItem (string date1, string description1, string miles1, string expenseType1, 
+        string expenseCode1, string rate1, string totalExpense1, string mileageTotal1)
         {
             date = date1;
             description = description1;

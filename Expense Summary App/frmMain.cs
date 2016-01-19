@@ -12,23 +12,19 @@ namespace Expense_Summary_App
 {
     public partial class frmMain : Form
     {
+        //Instantiate a new instance of frmMain and intialize
         public frmMain()
         {
             InitializeComponent();
         }
 
         
-        //instantiate the Add Expense form to be show when the add item button is clicked
-        //frmAddItem frmAddItem = new frmAddItem();
-
-        
-
         #region Buttons
 
         //Add Item button code, pops a new instance of AddItem form 
         private void btnAddItem_Click(object sender, EventArgs e)
         {
-            //frmAddItem.ShowDialog();
+            //used "using" to ensure better consumption of system resources
             using (var frmAddItem = new frmAddItem(this))
             {
                 frmAddItem.ShowDialog();
@@ -37,6 +33,10 @@ namespace Expense_Summary_App
 
         #endregion
 
+        #region Methods
+
+        //Method to call from frmAddItem to pass the values from the ExpenseItem object created 
+        //with the textbox input and send to the data grid view
         public void SendToGrid(ExpenseItem expenseItem)
         {
             DataGridViewRow row = (DataGridViewRow)dataGridView1.Rows[0].Clone();
@@ -50,6 +50,7 @@ namespace Expense_Summary_App
             dataGridView1.Rows.Add(row);
         }
 
-        
+        #endregion
+
     }
 }

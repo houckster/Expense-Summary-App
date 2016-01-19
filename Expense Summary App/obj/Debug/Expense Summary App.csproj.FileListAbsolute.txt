@@ -18,3 +18,13 @@ C:\Users\James Houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\ob
 C:\Users\James Houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\obj\Debug\Expense_Summary_App.frmAddItem.resources
 C:\Users\James Houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\obj\Debug\Expense_Summary_App.Properties.Resources.resources
 C:\Users\James Houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\obj\Debug\Expense Summary App.csproj.GenerateResource.Cache
+C:\Users\james.houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\bin\Debug\Expense Summary App.exe.config
+C:\Users\james.houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\obj\Debug\Expense Summary App.exe
+C:\Users\james.houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\obj\Debug\Expense Summary App.pdb
+C:\Users\james.houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\bin\Debug\Expense Summary App.exe
+C:\Users\james.houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\bin\Debug\Expense Summary App.pdb
+C:\Users\james.houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\obj\Debug\Expense Summary App.csprojResolveAssemblyReference.cache
+C:\Users\james.houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\obj\Debug\Expense_Summary_App.frmMain.resources
+C:\Users\james.houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\obj\Debug\Expense_Summary_App.frmAddItem.resources
+C:\Users\james.houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\obj\Debug\Expense_Summary_App.Properties.Resources.resources
+C:\Users\james.houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\obj\Debug\Expense Summary App.csproj.GenerateResource.Cache
