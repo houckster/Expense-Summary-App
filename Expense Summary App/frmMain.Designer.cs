@@ -180,9 +180,9 @@
             // 
             // btnAddItem
             // 
-            this.btnAddItem.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAddItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
             this.btnAddItem.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnAddItem.Location = new System.Drawing.Point(1121, 212);
+            this.btnAddItem.Location = new System.Drawing.Point(1121, 233);
             this.btnAddItem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(132, 55);
@@ -193,7 +193,7 @@
             // 
             // btnExportList
             // 
-            this.btnExportList.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnExportList.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnExportList.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btnExportList.Location = new System.Drawing.Point(1121, 394);
             this.btnExportList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -305,9 +305,9 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(449, 138);
+            this.pictureBox3.Location = new System.Drawing.Point(1, 346);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1243, 785);
+            this.pictureBox3.Size = new System.Drawing.Size(1279, 684);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 12;
             this.pictureBox3.TabStop = false;

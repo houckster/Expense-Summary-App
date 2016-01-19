@@ -53,8 +53,8 @@
             this.lblReceiptFile = new System.Windows.Forms.Label();
             this.txtReceiptFile = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
             this.txtWriteInTotal = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.btnCalculate = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -128,7 +128,7 @@
             // 
             // btnAttachReceipt
             // 
-            this.btnAttachReceipt.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAttachReceipt.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnAttachReceipt.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btnAttachReceipt.Location = new System.Drawing.Point(284, 48);
             this.btnAttachReceipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -140,13 +140,15 @@
             // 
             // btnSubmit
             // 
+            this.btnSubmit.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnSubmit.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.btnSubmit.Location = new System.Drawing.Point(80, 523);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(132, 54);
             this.btnSubmit.TabIndex = 10;
             this.btnSubmit.Text = "&Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // label3
@@ -202,7 +204,7 @@
             // 
             // txtExpenseCode
             // 
-            this.txtExpenseCode.Location = new System.Drawing.Point(124, 43);
+            this.txtExpenseCode.Location = new System.Drawing.Point(124, 46);
             this.txtExpenseCode.Margin = new System.Windows.Forms.Padding(4);
             this.txtExpenseCode.Name = "txtExpenseCode";
             this.txtExpenseCode.ReadOnly = true;
@@ -323,6 +325,13 @@
             this.panel2.Size = new System.Drawing.Size(426, 100);
             this.panel2.TabIndex = 26;
             // 
+            // txtWriteInTotal
+            // 
+            this.txtWriteInTotal.Location = new System.Drawing.Point(124, 73);
+            this.txtWriteInTotal.Name = "txtWriteInTotal";
+            this.txtWriteInTotal.Size = new System.Drawing.Size(100, 22);
+            this.txtWriteInTotal.TabIndex = 17;
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -331,13 +340,6 @@
             this.label10.Size = new System.Drawing.Size(101, 17);
             this.label10.TabIndex = 16;
             this.label10.Text = "Write-In Total :";
-            // 
-            // txtWriteInTotal
-            // 
-            this.txtWriteInTotal.Location = new System.Drawing.Point(124, 73);
-            this.txtWriteInTotal.Name = "txtWriteInTotal";
-            this.txtWriteInTotal.Size = new System.Drawing.Size(100, 22);
-            this.txtWriteInTotal.TabIndex = 17;
             // 
             // btnCalculate
             // 

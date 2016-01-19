@@ -29,9 +29,7 @@ namespace Expense_Summary_App
         //initialize global variables used to calculate and assign readonly textboxes
         double rate = .575;
         double totalExpense = 0;
-        string expenseCode = "";
-         
-
+        
         #endregion
 
         #region Buttons and Checkbox
@@ -68,7 +66,7 @@ namespace Expense_Summary_App
                 dtpReceiptDate.Visible = true;
                 lblReceiptFile.Visible = true;
                 txtReceiptFile.Visible = true;
-
+                
             }
         }
 
@@ -98,8 +96,62 @@ namespace Expense_Summary_App
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            //TODO: run validation methods from validation class
+
             //TODO: calculate and assign the values for the read-only values to be passed to object
-            
+            if (checkBox1.Checked == false)
+            {
+                txtMileageTotal.Text = "NA";
+                txtTotalMiles.Text = "NA";
+                txtRate.Text = "NA";
+            }
+
+            if (checkBox1.Checked == true)
+            {
+                txtWriteInTotal.Text = "";
+            }
+
+            totalExpense = Convert.ToDouble(txtWriteInTotal.Text);
+            txtTotalExpense.Text = totalExpense.ToString("c"); 
+
+            //assign the expense code based on the expense type selected
+            switch (comboBox1.Text)
+            {
+                case "meals & entertainment":
+                    txtExpenseCode.Text = "m";
+                    break;
+                case "employee vehicle auto reimbursment":
+                    txtExpenseCode.Text = "a";
+                    break;
+                case "company vehicle fuel":
+                    txtExpenseCode.Text = "f";
+                    break;
+                case "company vehicle repairs & maintance":
+                    txtExpenseCode.Text = "rm";
+                    break;
+                case "employee relations":
+                    txtExpenseCode.Text = "e";
+                    break;
+                case "travel, cab fare, car rental, etc.":
+                    txtExpenseCode.Text = "t";
+                    break;
+                case "Selling Telecommunicatons":
+                    txtExpenseCode.Text = "o";
+                    break;
+                case "1 - other expenses to be itemized":
+                    txtExpenseCode.Text = "o1";
+                    break;
+                case "2 - other expenses to be itemized":
+                    txtExpenseCode.Text = "o2";
+                    break;
+                case "3 - other expenses to be itemized":
+                    txtExpenseCode.Text = "o3";
+                    break;
+                case "4 - other expenses to be itemized":
+                    txtExpenseCode.Text = "o4";
+                    break;
+            }
+
 
             /*Instantiate an object instance of the ExpenseItem class using the 8 argument contructor, 
             pulling in the values from the form*/
