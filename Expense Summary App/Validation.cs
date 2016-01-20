@@ -58,11 +58,23 @@ namespace Expense_Summary_App
         {
             if (textBox.Text == "")
             {
-                MessageBox.Show(name + " cannot be blank. PLease fill in the textbox and resubmit.", Title);
+                MessageBox.Show(name + " cannot be blank. Please fill in the textbox and resubmit.", Title);
                 textBox.Focus();
                 return false;
             }
             return true;
-         }        
+         }
+
+        //method to check for blank combobox entry
+        public static bool ComboContainsData(ComboBox comboBox, string name)
+        {
+            if (comboBox.Text == "")
+            {
+                MessageBox.Show(name + " cannot be blank. Please make a selection from the combo box and resubmit.", Title);
+                comboBox.Focus();
+                return false;
+            }
+            return true;
+        }
     }
 }

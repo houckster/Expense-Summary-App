@@ -93,25 +93,35 @@ namespace Expense_Summary_App
             txtTotalMiles.Text = "";
         }
 
+        //submit button click event
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            //TODO: run validation methods from validation class
-
-            //TODO: calculate and assign the values for the read-only values to be passed to object
+            //Run this logic path if mileage? is NOT checked
             if (checkBox1.Checked == false)
             {
-                txtMileageTotal.Text = "NA";
-                txtTotalMiles.Text = "NA";
-                txtRate.Text = "NA";
+                //perform data validation and proceed only if true is returned from method
+                if (NonMileageIsValidData())
+                {
+                    txtMileageTotal.Text = "NA";
+                    txtTotalMiles.Text = "NA";
+                    txtRate.Text = "NA";
+                    double totalExpense = 0.00;
+                    totalExpense = Convert.ToDouble(txtWriteInTotal.Text);
+                    txtTotalExpense.Text = totalExpense.ToString("c");
+                }
+                
             }
 
+            //Run this logic path if mileage? IS checked
             if (checkBox1.Checked == true)
             {
-                txtWriteInTotal.Text = "";
+                //perform data validation and proceed only if true is returned from method
+                if (MileageIsValidData())
+                {
+                    txtWriteInTotal.Text = "";
+                }
+                
             }
-
-            totalExpense = Convert.ToDouble(txtWriteInTotal.Text);
-            txtTotalExpense.Text = totalExpense.ToString("c"); 
 
             //assign the expense code based on the expense type selected
             switch (comboBox1.Text)
@@ -173,11 +183,12 @@ namespace Expense_Summary_App
 
         }
 
+        //exit button click event
         private void btnExit_Click(object sender, EventArgs e)
         {
             // Initializes the variables to pass to the MessageBox.Show method.
-            string message = "If you exit, all data on this form will be lost. Are you sure that you want to exit?";
-            string caption = "Exit";
+            string message = "If you exit without clicking submit, all data on this form will be lost. Are you sure that you want to exit?";
+            string caption = "Exit Warning";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result;
 
@@ -198,13 +209,20 @@ namespace Expense_Summary_App
         //uses methods from Validation class and passes in textboxes when mileage is checked for validation 
         private bool MileageIsValidData()
         {
-            return Validation.ContainsData(txtDescription, "Description");
+            return Validation.ContainsData(txtDescription, "Description") &&
+                   Validation.ContainsData(txtTotalMiles, "Total Miles") &&
+                   Validation.IsDecimal(txtTotalMiles, "Total Miles") &&
+                   Validation.IsWithinRange(txtTotalMiles, "Total Miles", 1, 2000);
         }
 
         //uses methods from Validation class and passes in textboxes when mileage is unchecked for validation 
         private bool NonMileageIsValidData()
         {
-            return Validation.ContainsData(txtDescription, "Description");
+            return Validation.ContainsData(txtDescription, "Description") &&
+                   Validation.ContainsData(txtWriteInTotal, "Write-In Total") &&
+                   Validation.IsDecimal(txtWriteInTotal, "Write-In Total") &&
+                   Validation.IsWithinRange(txtWriteInTotal, "Write-In Total", 1, 1000) &&
+                   Validation.ComboContainsData(comboBox1, "Expense Type");
         }
 
         #endregion
