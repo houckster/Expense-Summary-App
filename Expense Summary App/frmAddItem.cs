@@ -175,13 +175,40 @@ namespace Expense_Summary_App
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            //TODO: pop a message box saying that all data will not be saved, if OK, then close, 
-            //other wise remain on form
-            this.Close();
+            // Initializes the variables to pass to the MessageBox.Show method.
+            string message = "If you exit, all data on this form will be lost. Are you sure that you want to exit?";
+            string caption = "Exit";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            // Displays the MessageBox.
+            result = MessageBox.Show(message, caption, buttons);
+
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                // Closes the parent form.
+                this.Close();
+            }
         }
 
         #endregion
 
+        #region Validation Methods 
+
+        //uses methods from Validation class and passes in textboxes when mileage is checked for validation 
+        private bool MileageIsValidData()
+        {
+            return Validation.ContainsData(txtDescription, "Description");
         }
+
+        //uses methods from Validation class and passes in textboxes when mileage is unchecked for validation 
+        private bool NonMileageIsValidData()
+        {
+            return Validation.ContainsData(txtDescription, "Description");
+        }
+
+        #endregion
+
+    }
 
 }
