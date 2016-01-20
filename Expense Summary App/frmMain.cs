@@ -31,6 +31,20 @@ namespace Expense_Summary_App
             }
         }
 
+        //Edit button on datagridview
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+
+            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                e.RowIndex >= 0)
+            {
+                //TODO - when clicked, using the data grid view data, send the values to a new frmAddItem
+
+                //dataGridView1.Rows.RemoveAt(this.dataGridView1.SelectedRows[0].Index);
+            }
+        }
+
         #endregion
 
         #region Methods
@@ -49,7 +63,7 @@ namespace Expense_Summary_App
             row.Cells[6].Value = expenseItem.totalExpense;
             dataGridView1.Rows.Add(row);
         }
-
+        
         #endregion
 
     }

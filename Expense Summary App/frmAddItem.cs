@@ -108,8 +108,59 @@ namespace Expense_Summary_App
                     double totalExpense = 0.00;
                     totalExpense = Convert.ToDouble(txtWriteInTotal.Text);
                     txtTotalExpense.Text = totalExpense.ToString("c");
+
+                    //assign the expense code based on the expense type selected
+                    switch (comboBox1.Text)
+                    {
+                        case "meals & entertainment":
+                            txtExpenseCode.Text = "m";
+                            break;
+                        case "employee vehicle auto reimbursment":
+                            txtExpenseCode.Text = "a";
+                            break;
+                        case "company vehicle fuel":
+                            txtExpenseCode.Text = "f";
+                            break;
+                        case "company vehicle repairs & maintance":
+                            txtExpenseCode.Text = "rm";
+                            break;
+                        case "employee relations":
+                            txtExpenseCode.Text = "e";
+                            break;
+                        case "travel, cab fare, car rental, etc.":
+                            txtExpenseCode.Text = "t";
+                            break;
+                        case "Selling Telecommunicatons":
+                            txtExpenseCode.Text = "o";
+                            break;
+                        case "1 - other expenses to be itemized":
+                            txtExpenseCode.Text = "o1";
+                            break;
+                        case "2 - other expenses to be itemized":
+                            txtExpenseCode.Text = "o2";
+                            break;
+                        case "3 - other expenses to be itemized":
+                            txtExpenseCode.Text = "o3";
+                            break;
+                        case "4 - other expenses to be itemized":
+                            txtExpenseCode.Text = "o4";
+                            break;
+                    }
+
+                    /*Instantiate an object instance of the ExpenseItem class using the 8 argument contructor, 
+                    pulling in the values from the form*/
+                    ExpenseItem expenseItem = new ExpenseItem(dtpReceiptDate.Text.ToString(),
+                    txtDescription.Text.ToString(), txtTotalMiles.Text.ToString(), comboBox1.Text.ToString(),
+                    txtExpenseCode.Text.ToString(), txtRate.Text.ToString(), txtTotalExpense.Text.ToString(),
+                    txtMileageTotal.Text.ToString());
+
+
+                    //call the method from the main form to send the object property values to the data 
+                    //grid view on form one
+                    frmMain.SendToGrid(expenseItem);
+                    this.Close();
+
                 }
-                
             }
 
             //Run this logic path if mileage? IS checked
@@ -119,61 +170,23 @@ namespace Expense_Summary_App
                 if (MileageIsValidData())
                 {
                     txtWriteInTotal.Text = "";
+
+                    /*Instantiate an object instance of the ExpenseItem class using the 8 argument contructor, 
+                    pulling in the values from the form*/
+                    ExpenseItem expenseItem = new ExpenseItem(dtpReceiptDate.Text.ToString(),
+                    txtDescription.Text.ToString(), txtTotalMiles.Text.ToString(), comboBox1.Text.ToString(),
+                    txtExpenseCode.Text.ToString(), txtRate.Text.ToString(), txtTotalExpense.Text.ToString(),
+                    txtMileageTotal.Text.ToString());
+
+
+                    //call the method from the main form to send the object property values to the data 
+                    //grid view on form one
+                    frmMain.SendToGrid(expenseItem);
+                    this.Close();
                 }
-                
+                                
             }
-
-            //assign the expense code based on the expense type selected
-            switch (comboBox1.Text)
-            {
-                case "meals & entertainment":
-                    txtExpenseCode.Text = "m";
-                    break;
-                case "employee vehicle auto reimbursment":
-                    txtExpenseCode.Text = "a";
-                    break;
-                case "company vehicle fuel":
-                    txtExpenseCode.Text = "f";
-                    break;
-                case "company vehicle repairs & maintance":
-                    txtExpenseCode.Text = "rm";
-                    break;
-                case "employee relations":
-                    txtExpenseCode.Text = "e";
-                    break;
-                case "travel, cab fare, car rental, etc.":
-                    txtExpenseCode.Text = "t";
-                    break;
-                case "Selling Telecommunicatons":
-                    txtExpenseCode.Text = "o";
-                    break;
-                case "1 - other expenses to be itemized":
-                    txtExpenseCode.Text = "o1";
-                    break;
-                case "2 - other expenses to be itemized":
-                    txtExpenseCode.Text = "o2";
-                    break;
-                case "3 - other expenses to be itemized":
-                    txtExpenseCode.Text = "o3";
-                    break;
-                case "4 - other expenses to be itemized":
-                    txtExpenseCode.Text = "o4";
-                    break;
-            }
-
-
-            /*Instantiate an object instance of the ExpenseItem class using the 8 argument contructor, 
-            pulling in the values from the form*/
-            ExpenseItem expenseItem = new ExpenseItem(dtpReceiptDate.Text.ToString(), 
-            txtDescription.Text.ToString(), txtTotalMiles.Text.ToString(), comboBox1.Text.ToString(), 
-            txtExpenseCode.Text.ToString(), txtRate.Text.ToString(), txtTotalExpense.Text.ToString(), 
-            txtMileageTotal.Text.ToString());
-
             
-            //call the method from the main form to send the object property values to the data 
-            //grid view on form one
-            frmMain.SendToGrid(expenseItem);
-            this.Close();
                      
         }
 
@@ -204,7 +217,7 @@ namespace Expense_Summary_App
 
         #endregion
 
-        #region Validation Methods 
+        #region Add Item Form Validation Methods 
 
         //uses methods from Validation class and passes in textboxes when mileage is checked for validation 
         private bool MileageIsValidData()
