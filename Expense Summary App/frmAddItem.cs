@@ -15,8 +15,8 @@ namespace Expense_Summary_App
         //instantiate an instance of the main form
         public frmMain frmMain;
 
-        //pass through reference to frmMain in frmAddItem so I can access the SendToGrid method from 
-        //frmMain class
+        /*pass through reference to frmMain in frmAddItem so I can access the SendToGrid method from 
+        frmMain class*/
         public frmAddItem(frmMain frmMain)
         {
             InitializeComponent();

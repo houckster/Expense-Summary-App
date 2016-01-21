@@ -16,6 +16,7 @@ namespace Expense_Summary_App
         public frmMain()
         {
             InitializeComponent();
+            ImportFile();
         }
 
         
@@ -41,7 +42,7 @@ namespace Expense_Summary_App
             {
                 //TODO - when clicked, using the data grid view data, send the values to a new frmAddItem
 
-                //dataGridView1.Rows.RemoveAt(this.dataGridView1.SelectedRows[0].Index);
+                dataGridView1.Rows.RemoveAt(this.dataGridView1.SelectedRows[e.RowIndex].Index);
             }
         }
 
@@ -63,8 +64,71 @@ namespace Expense_Summary_App
             row.Cells[6].Value = expenseItem.totalExpense;
             dataGridView1.Rows.Add(row);
         }
+
+        //method to import the CSV file that has expense summary data
+        private bool ImportFile()
+        {
+            // Displays an OpenFileDialog so the user can select a Cursor.
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "CSV File|*.csv";
+            openFileDialog1.Title = "Select a CSV file";
+            openFileDialog1.ShowDialog();
+
+            try
+            {
+
+                String fName;
+                String textLine = string.Empty;
+                String[] splitLine;
+
+                // clear the grid view
+
+                dataGridView1.Rows.Clear();
+
+                fName = openFileDialog1.FileName;
+
+                if (System.IO.File.Exists(fName))
+                {
+                    System.IO.StreamReader objReader = new System.IO.StreamReader(fName);
+
+                    do
+                    {
+                        textLine = objReader.ReadLine();
+                        if (textLine != "")
+                        {
+                            splitLine = textLine.Split(',');
+                            if (splitLine[0] != "" || splitLine[1] != "")
+                            {
+                                dataGridView1.Rows.Add(splitLine);
+                            }
+                        }
+                    } while (objReader.Peek() != -1);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message.Contains("The process cannot access the file"))
+                {
+                    MessageBox.Show("The file you are importing is already open.", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                return false;
+            }
+        }
+
+         private void btnSave_Click(object sender, EventArgs e)
+            {
+                //TODO: code to save datagridview to same CSV used to populate the data
+            }
+
+        }
         
         #endregion
-
+            
     }
-}
+
