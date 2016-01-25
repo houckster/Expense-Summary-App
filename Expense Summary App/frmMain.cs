@@ -17,6 +17,7 @@ namespace Expense_Summary_App
         {
             InitializeComponent();
             ImportFile();
+            
         }
 
         

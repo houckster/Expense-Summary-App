@@ -40,7 +40,6 @@
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnAddItem = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -64,10 +63,10 @@
             // 
             // panel1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.txtVendorCode);
             this.panel1.Controls.Add(this.dateTimePicker2);
+            this.panel1.Controls.Add(this.btnAddItem);
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txtLastName);
@@ -75,16 +74,16 @@
             this.panel1.Controls.Add(this.txtFirstName);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(18, 172);
+            this.panel1.Location = new System.Drawing.Point(1, 204);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(805, 79);
+            this.panel1.Size = new System.Drawing.Size(1244, 61);
             this.panel1.TabIndex = 4;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(646, 10);
+            this.label7.Location = new System.Drawing.Point(1090, 37);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(16, 13);
@@ -93,16 +92,16 @@
             // 
             // txtVendorCode
             // 
-            this.txtVendorCode.Location = new System.Drawing.Point(520, 41);
+            this.txtVendorCode.Location = new System.Drawing.Point(768, 32);
             this.txtVendorCode.Margin = new System.Windows.Forms.Padding(2);
             this.txtVendorCode.Name = "txtVendorCode";
-            this.txtVendorCode.Size = new System.Drawing.Size(100, 20);
+            this.txtVendorCode.Size = new System.Drawing.Size(78, 20);
             this.txtVendorCode.TabIndex = 8;
             // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(683, 7);
+            this.dateTimePicker2.Location = new System.Drawing.Point(1110, 33);
             this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(100, 20);
@@ -111,7 +110,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(520, 8);
+            this.dateTimePicker1.Location = new System.Drawing.Point(986, 33);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(100, 20);
@@ -120,7 +119,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(385, 10);
+            this.label6.Location = new System.Drawing.Point(863, 36);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(119, 13);
@@ -129,16 +128,16 @@
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(142, 43);
+            this.txtLastName.Location = new System.Drawing.Point(533, 33);
             this.txtLastName.Margin = new System.Windows.Forms.Padding(2);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(190, 20);
+            this.txtLastName.Size = new System.Drawing.Size(150, 20);
             this.txtLastName.TabIndex = 3;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(388, 46);
+            this.label5.Location = new System.Drawing.Point(689, 35);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 13);
@@ -147,16 +146,16 @@
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(142, 10);
+            this.txtFirstName.Location = new System.Drawing.Point(242, 33);
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(190, 20);
+            this.txtFirstName.Size = new System.Drawing.Size(155, 20);
             this.txtFirstName.TabIndex = 2;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(14, 46);
+            this.label4.Location = new System.Drawing.Point(416, 36);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 13);
@@ -166,30 +165,18 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 12);
+            this.label3.Location = new System.Drawing.Point(126, 35);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Employee First Name :";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label2.Location = new System.Drawing.Point(20, 146);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 23);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "General Info";
-            // 
             // btnAddItem
             // 
             this.btnAddItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
             this.btnAddItem.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnAddItem.Location = new System.Drawing.Point(841, 189);
+            this.btnAddItem.Location = new System.Drawing.Point(9, 7);
             this.btnAddItem.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(99, 45);
@@ -202,7 +189,7 @@
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnSave.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnSave.Location = new System.Drawing.Point(841, 287);
+            this.btnSave.Location = new System.Drawing.Point(1103, 285);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(99, 31);
@@ -310,10 +297,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-24, -6);
+            this.pictureBox2.Location = new System.Drawing.Point(-9, -6);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(984, 189);
+            this.pictureBox2.Size = new System.Drawing.Size(1254, 206);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
@@ -334,13 +321,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1271, 596);
+            this.ClientSize = new System.Drawing.Size(1271, 707);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnAddItem);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox3);
@@ -371,7 +356,6 @@
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnAddItem;
         private System.Windows.Forms.Label label9;
