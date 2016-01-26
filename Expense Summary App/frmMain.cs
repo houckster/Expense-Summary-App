@@ -12,7 +12,7 @@ namespace Expense_Summary_App
 {
     public partial class frmMain : Form
     {
-        //Instantiate a new instance of frmMain and intialize
+        //Instantiate a new instance of frmMain and intialize, open file dialog for CSV data import to simulate db
         public frmMain()
         {
             InitializeComponent();
@@ -116,6 +116,7 @@ namespace Expense_Summary_App
                 }
                 return true;
             }
+            //to prevent crash if file is open 
             catch (Exception ex)
             {
                 if (ex.Message.Contains("The process cannot access the file"))
