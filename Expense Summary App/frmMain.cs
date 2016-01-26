@@ -47,6 +47,15 @@ namespace Expense_Summary_App
             }
         }
 
+        /*
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
+            {
+                dataGridView1.Rows.RemoveAt(this.dataGridView1.SelectedRows[e.RowIndex].Index);
+            }
+        }*/
+
         #endregion
 
         #region Methods

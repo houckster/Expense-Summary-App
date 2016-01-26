@@ -65,6 +65,18 @@ namespace Expense_Summary_App
             return true;
          }
 
+        //method to check for blank mileage total box
+        public static bool MileageDollarsContainsData(TextBox textBox)
+        {
+            if (textBox.Text == "")
+            {
+                MessageBox.Show("You must click on the calculate button to get your mileage total before submitting.", Title);
+                textBox.Focus();
+                return false;
+            }
+            return true;
+        }
+
         //method to check for blank combobox entry
         public static bool ComboContainsData(ComboBox comboBox, string name)
         {

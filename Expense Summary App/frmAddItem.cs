@@ -43,8 +43,8 @@ namespace Expense_Summary_App
                 btnCalculate.Visible = true;
                 btnClear.Visible = true;
                 btnAttachReceipt.Visible = false;
-                lblReceiptDate.Visible = false;
-                dtpReceiptDate.Visible = false;
+                lblReceiptDate.Visible = true;
+                dtpReceiptDate.Visible = true;
                 lblReceiptFile.Visible = false;
                 txtReceiptFile.Visible = false;
 
@@ -225,7 +225,8 @@ namespace Expense_Summary_App
             return Validation.ContainsData(txtDescription, "Description") &&
                    Validation.ContainsData(txtTotalMiles, "Total Miles") &&
                    Validation.IsDecimal(txtTotalMiles, "Total Miles") &&
-                   Validation.IsWithinRange(txtTotalMiles, "Total Miles", 1, 2000);
+                   Validation.IsWithinRange(txtTotalMiles, "Total Miles", 1, 2000) &&
+                   Validation.MileageDollarsContainsData(txtMileageTotal);
         }
 
         //uses methods from Validation class and passes in textboxes when mileage is unchecked for validation 

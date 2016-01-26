@@ -33,6 +33,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtVendorCode = new System.Windows.Forms.TextBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.btnAddItem = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.txtLastName = new System.Windows.Forms.TextBox();
@@ -40,9 +41,12 @@
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnAddItem = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.colReceiptDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colExpenseCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,10 +55,7 @@
             this.colMileage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotalExpense = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -83,7 +84,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(1090, 37);
+            this.label7.Location = new System.Drawing.Point(1101, 36);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(16, 13);
@@ -92,7 +93,7 @@
             // 
             // txtVendorCode
             // 
-            this.txtVendorCode.Location = new System.Drawing.Point(768, 32);
+            this.txtVendorCode.Location = new System.Drawing.Point(777, 33);
             this.txtVendorCode.Margin = new System.Windows.Forms.Padding(2);
             this.txtVendorCode.Name = "txtVendorCode";
             this.txtVendorCode.Size = new System.Drawing.Size(78, 20);
@@ -101,16 +102,29 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(1110, 33);
+            this.dateTimePicker2.Location = new System.Drawing.Point(1121, 33);
             this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(100, 20);
             this.dateTimePicker2.TabIndex = 7;
             // 
+            // btnAddItem
+            // 
+            this.btnAddItem.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnAddItem.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnAddItem.Location = new System.Drawing.Point(9, 7);
+            this.btnAddItem.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddItem.Name = "btnAddItem";
+            this.btnAddItem.Size = new System.Drawing.Size(99, 45);
+            this.btnAddItem.TabIndex = 0;
+            this.btnAddItem.Text = "&Add Item";
+            this.btnAddItem.UseVisualStyleBackColor = false;
+            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
+            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(986, 33);
+            this.dateTimePicker1.Location = new System.Drawing.Point(997, 33);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(100, 20);
@@ -119,7 +133,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(863, 36);
+            this.label6.Location = new System.Drawing.Point(874, 36);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(119, 13);
@@ -137,7 +151,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(689, 35);
+            this.label5.Location = new System.Drawing.Point(698, 36);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 13);
@@ -172,24 +186,11 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Employee First Name :";
             // 
-            // btnAddItem
-            // 
-            this.btnAddItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(204)))), ((int)(((byte)(0)))));
-            this.btnAddItem.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnAddItem.Location = new System.Drawing.Point(9, 7);
-            this.btnAddItem.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAddItem.Name = "btnAddItem";
-            this.btnAddItem.Size = new System.Drawing.Size(99, 45);
-            this.btnAddItem.TabIndex = 0;
-            this.btnAddItem.Text = "&Add Item";
-            this.btnAddItem.UseVisualStyleBackColor = false;
-            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
-            // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnSave.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnSave.Location = new System.Drawing.Point(1103, 285);
+            this.btnSave.Location = new System.Drawing.Point(1123, 285);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(99, 31);
@@ -200,6 +201,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -211,66 +214,16 @@
             this.colRate,
             this.colMileage,
             this.colTotalExpense,
-            this.Edit});
+            this.Edit,
+            this.Delete});
             this.dataGridView1.Location = new System.Drawing.Point(19, 320);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1183, 347);
+            this.dataGridView1.Size = new System.Drawing.Size(1203, 347);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.Tag = "ExpenseSummary";
-            // 
-            // colReceiptDate
-            // 
-            this.colReceiptDate.HeaderText = "Receipt Date";
-            this.colReceiptDate.Name = "colReceiptDate";
-            this.colReceiptDate.ReadOnly = true;
-            // 
-            // colDescription
-            // 
-            this.colDescription.HeaderText = "Description";
-            this.colDescription.Name = "colDescription";
-            this.colDescription.ReadOnly = true;
-            this.colDescription.Width = 475;
-            // 
-            // colExpenseCode
-            // 
-            this.colExpenseCode.HeaderText = "Expense Code";
-            this.colExpenseCode.Name = "colExpenseCode";
-            this.colExpenseCode.ReadOnly = true;
-            this.colExpenseCode.Width = 75;
-            // 
-            // colEnterMiles
-            // 
-            this.colEnterMiles.HeaderText = "Enter Miles";
-            this.colEnterMiles.Name = "colEnterMiles";
-            this.colEnterMiles.ReadOnly = true;
-            // 
-            // colRate
-            // 
-            this.colRate.HeaderText = "Rate";
-            this.colRate.Name = "colRate";
-            this.colRate.ReadOnly = true;
-            this.colRate.Width = 75;
-            // 
-            // colMileage
-            // 
-            this.colMileage.HeaderText = "Mileage $";
-            this.colMileage.Name = "colMileage";
-            this.colMileage.ReadOnly = true;
-            // 
-            // colTotalExpense
-            // 
-            this.colTotalExpense.HeaderText = "Total Expense";
-            this.colTotalExpense.Name = "colTotalExpense";
-            this.colTotalExpense.ReadOnly = true;
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
             // 
             // label9
             // 
@@ -316,12 +269,83 @@
             this.pictureBox3.TabIndex = 12;
             this.pictureBox3.TabStop = false;
             // 
+            // colReceiptDate
+            // 
+            this.colReceiptDate.HeaderText = "Receipt Date";
+            this.colReceiptDate.Name = "colReceiptDate";
+            this.colReceiptDate.ReadOnly = true;
+            // 
+            // colDescription
+            // 
+            this.colDescription.HeaderText = "Description";
+            this.colDescription.Name = "colDescription";
+            this.colDescription.ReadOnly = true;
+            this.colDescription.Width = 500;
+            // 
+            // colExpenseCode
+            // 
+            this.colExpenseCode.HeaderText = "Expense Code";
+            this.colExpenseCode.Name = "colExpenseCode";
+            this.colExpenseCode.ReadOnly = true;
+            this.colExpenseCode.Width = 75;
+            // 
+            // colEnterMiles
+            // 
+            this.colEnterMiles.HeaderText = "Enter Miles";
+            this.colEnterMiles.Name = "colEnterMiles";
+            this.colEnterMiles.ReadOnly = true;
+            // 
+            // colRate
+            // 
+            this.colRate.HeaderText = "Rate";
+            this.colRate.Name = "colRate";
+            this.colRate.ReadOnly = true;
+            this.colRate.Width = 75;
+            // 
+            // colMileage
+            // 
+            this.colMileage.HeaderText = "Mileage $";
+            this.colMileage.Name = "colMileage";
+            this.colMileage.ReadOnly = true;
+            // 
+            // colTotalExpense
+            // 
+            this.colTotalExpense.HeaderText = "Total Expense";
+            this.colTotalExpense.Name = "colTotalExpense";
+            this.colTotalExpense.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Edit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "Edit";
+            this.Edit.ToolTipText = "Click to edit row.";
+            this.Edit.UseColumnTextForButtonValue = true;
+            this.Edit.Width = 31;
+            // 
+            // Delete
+            // 
+            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.ToolTipText = "Click to delete row.";
+            this.Delete.UseColumnTextForButtonValue = true;
+            this.Delete.Width = 44;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1271, 707);
+            this.ClientSize = new System.Drawing.Size(1222, 707);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnSave);
@@ -331,9 +355,9 @@
             this.Controls.Add(this.pictureBox3);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "ExpenseItem";
             this.Text = "Bell Lumber & Pole --- Expense Summary App";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -371,6 +395,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colMileage;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotalExpense;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
+        private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }
 }
 
