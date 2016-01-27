@@ -28,6 +28,7 @@ namespace Expense_Summary_App
         //initialize global variables used to calculate and assign readonly textboxes
         double rate = .575;
         double totalExpense = 0;
+        Image receipt = null;
         
         #endregion
 
@@ -67,6 +68,23 @@ namespace Expense_Summary_App
                 txtReceiptFile.Visible = true;
                 
             }
+        }
+        //attach receipt button---send to local variable
+        private void btnAttachReceipt_Click(object sender, EventArgs e)
+        {
+            string Chosen_File = "";
+
+            openFileDialog1.InitialDirectory = "C:";
+            openFileDialog1.Title = "Insert an Image";
+            openFileDialog1.FileName = "";
+            openFileDialog1.Filter = "JPEG Images|*.jpg|GIF Images|*.gif";
+
+            openFileDialog1.ShowDialog();
+
+            Chosen_File = openFileDialog1.FileName;
+            receipt = Image.FromFile(Chosen_File);
+            //still need to assign to ExpenseItem object when submitted
+            
         }
 
         //calculate button click event 

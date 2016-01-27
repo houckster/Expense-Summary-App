@@ -57,6 +57,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnCalculate = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -64,58 +65,55 @@
             // lblReceiptDate
             // 
             this.lblReceiptDate.AutoSize = true;
-            this.lblReceiptDate.Location = new System.Drawing.Point(6, 47);
-            this.lblReceiptDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblReceiptDate.Location = new System.Drawing.Point(8, 58);
             this.lblReceiptDate.Name = "lblReceiptDate";
-            this.lblReceiptDate.Size = new System.Drawing.Size(76, 13);
+            this.lblReceiptDate.Size = new System.Drawing.Size(98, 17);
             this.lblReceiptDate.TabIndex = 0;
             this.lblReceiptDate.Text = "Receipt Date :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 114);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(8, 140);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.Size = new System.Drawing.Size(87, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Description :";
             // 
             // lblTotalMiles
             // 
             this.lblTotalMiles.AutoSize = true;
-            this.lblTotalMiles.Location = new System.Drawing.Point(7, 14);
-            this.lblTotalMiles.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTotalMiles.Location = new System.Drawing.Point(9, 17);
             this.lblTotalMiles.Name = "lblTotalMiles";
-            this.lblTotalMiles.Size = new System.Drawing.Size(64, 13);
+            this.lblTotalMiles.Size = new System.Drawing.Size(84, 17);
             this.lblTotalMiles.TabIndex = 2;
             this.lblTotalMiles.Text = "Total Miles :";
             // 
             // dtpReceiptDate
             // 
             this.dtpReceiptDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpReceiptDate.Location = new System.Drawing.Point(92, 43);
-            this.dtpReceiptDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpReceiptDate.Location = new System.Drawing.Point(123, 53);
+            this.dtpReceiptDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpReceiptDate.Name = "dtpReceiptDate";
-            this.dtpReceiptDate.Size = new System.Drawing.Size(105, 20);
+            this.dtpReceiptDate.Size = new System.Drawing.Size(139, 22);
             this.dtpReceiptDate.TabIndex = 5;
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(8, 129);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescription.Location = new System.Drawing.Point(11, 159);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(303, 76);
+            this.txtDescription.Size = new System.Drawing.Size(403, 93);
             this.txtDescription.TabIndex = 6;
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(8, 9);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBox1.Location = new System.Drawing.Point(11, 11);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(69, 17);
+            this.checkBox1.Size = new System.Drawing.Size(87, 21);
             this.checkBox1.TabIndex = 7;
             this.checkBox1.Text = "Mileage?";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -123,32 +121,33 @@
             // 
             // txtTotalMiles
             // 
-            this.txtTotalMiles.Location = new System.Drawing.Point(76, 14);
-            this.txtTotalMiles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTotalMiles.Location = new System.Drawing.Point(101, 17);
+            this.txtTotalMiles.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTotalMiles.Name = "txtTotalMiles";
-            this.txtTotalMiles.Size = new System.Drawing.Size(55, 20);
+            this.txtTotalMiles.Size = new System.Drawing.Size(72, 22);
             this.txtTotalMiles.TabIndex = 8;
             // 
             // btnAttachReceipt
             // 
             this.btnAttachReceipt.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnAttachReceipt.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnAttachReceipt.Location = new System.Drawing.Point(213, 39);
-            this.btnAttachReceipt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAttachReceipt.Location = new System.Drawing.Point(284, 48);
+            this.btnAttachReceipt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAttachReceipt.Name = "btnAttachReceipt";
-            this.btnAttachReceipt.Size = new System.Drawing.Size(99, 29);
+            this.btnAttachReceipt.Size = new System.Drawing.Size(132, 36);
             this.btnAttachReceipt.TabIndex = 9;
             this.btnAttachReceipt.Text = "&Attach Receipt";
             this.btnAttachReceipt.UseVisualStyleBackColor = false;
+            this.btnAttachReceipt.Click += new System.EventHandler(this.btnAttachReceipt_Click);
             // 
             // btnSubmit
             // 
             this.btnSubmit.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnSubmit.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btnSubmit.Location = new System.Drawing.Point(60, 425);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSubmit.Location = new System.Drawing.Point(80, 523);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(99, 44);
+            this.btnSubmit.Size = new System.Drawing.Size(132, 54);
             this.btnSubmit.TabIndex = 10;
             this.btnSubmit.Text = "&Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
@@ -157,10 +156,9 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 14);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(9, 17);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 13);
+            this.label3.Size = new System.Drawing.Size(106, 17);
             this.label3.TabIndex = 11;
             this.label3.Text = "Expense Type :";
             // 
@@ -179,18 +177,18 @@
             "2 - other expenses to be itemized",
             "3 - other expenses to be itemized",
             "4 - other expenses to be itemized"});
-            this.comboBox1.Location = new System.Drawing.Point(93, 11);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Location = new System.Drawing.Point(124, 14);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(202, 21);
+            this.comboBox1.Size = new System.Drawing.Size(268, 24);
             this.comboBox1.TabIndex = 12;
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(175, 425);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExit.Location = new System.Drawing.Point(233, 523);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(99, 44);
+            this.btnExit.Size = new System.Drawing.Size(132, 54);
             this.btnExit.TabIndex = 13;
             this.btnExit.Text = "E&xit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -199,71 +197,79 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 37);
+            this.label4.Location = new System.Drawing.Point(9, 46);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 13);
+            this.label4.Size = new System.Drawing.Size(107, 17);
             this.label4.TabIndex = 14;
             this.label4.Text = "Expense Code :";
             // 
             // txtExpenseCode
             // 
-            this.txtExpenseCode.Location = new System.Drawing.Point(93, 37);
+            this.txtExpenseCode.Location = new System.Drawing.Point(124, 46);
+            this.txtExpenseCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtExpenseCode.Name = "txtExpenseCode";
             this.txtExpenseCode.ReadOnly = true;
-            this.txtExpenseCode.Size = new System.Drawing.Size(76, 20);
+            this.txtExpenseCode.Size = new System.Drawing.Size(100, 22);
             this.txtExpenseCode.TabIndex = 15;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 48);
+            this.label5.Location = new System.Drawing.Point(12, 59);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 13);
+            this.label5.Size = new System.Drawing.Size(46, 17);
             this.label5.TabIndex = 16;
             this.label5.Text = "Rate :";
             // 
             // txtRate
             // 
-            this.txtRate.Location = new System.Drawing.Point(76, 46);
+            this.txtRate.Location = new System.Drawing.Point(101, 57);
+            this.txtRate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtRate.Name = "txtRate";
             this.txtRate.ReadOnly = true;
-            this.txtRate.Size = new System.Drawing.Size(46, 20);
+            this.txtRate.Size = new System.Drawing.Size(60, 22);
             this.txtRate.TabIndex = 17;
             // 
             // txtTotalExpense
             // 
             this.txtTotalExpense.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalExpense.Location = new System.Drawing.Point(109, 379);
+            this.txtTotalExpense.Location = new System.Drawing.Point(145, 466);
+            this.txtTotalExpense.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTotalExpense.Name = "txtTotalExpense";
             this.txtTotalExpense.ReadOnly = true;
-            this.txtTotalExpense.Size = new System.Drawing.Size(100, 19);
+            this.txtTotalExpense.Size = new System.Drawing.Size(132, 22);
             this.txtTotalExpense.TabIndex = 18;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(5, 376);
+            this.label6.Location = new System.Drawing.Point(7, 463);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(104, 20);
+            this.label6.Size = new System.Drawing.Size(130, 24);
             this.label6.TabIndex = 19;
             this.label6.Text = "Total Expense :";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(158, 49);
+            this.label7.Location = new System.Drawing.Point(211, 60);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 13);
+            this.label7.Size = new System.Drawing.Size(113, 17);
             this.label7.TabIndex = 20;
             this.label7.Text = "Mileage $ Total :";
             // 
             // txtMileageTotal
             // 
-            this.txtMileageTotal.Location = new System.Drawing.Point(243, 46);
+            this.txtMileageTotal.Location = new System.Drawing.Point(324, 57);
+            this.txtMileageTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMileageTotal.Name = "txtMileageTotal";
             this.txtMileageTotal.ReadOnly = true;
-            this.txtMileageTotal.Size = new System.Drawing.Size(62, 20);
+            this.txtMileageTotal.Size = new System.Drawing.Size(81, 22);
             this.txtMileageTotal.TabIndex = 21;
             // 
             // panel1
@@ -274,10 +280,10 @@
             this.panel1.Controls.Add(this.txtTotalMiles);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.txtRate);
-            this.panel1.Location = new System.Drawing.Point(-1, 264);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(-1, 325);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(314, 81);
+            this.panel1.Size = new System.Drawing.Size(419, 100);
             this.panel1.TabIndex = 22;
             this.panel1.Visible = false;
             // 
@@ -286,30 +292,28 @@
             this.lblSection.AutoSize = true;
             this.lblSection.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSection.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblSection.Location = new System.Drawing.Point(4, 238);
-            this.lblSection.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSection.Location = new System.Drawing.Point(5, 293);
             this.lblSection.Name = "lblSection";
-            this.lblSection.Size = new System.Drawing.Size(165, 23);
+            this.lblSection.Size = new System.Drawing.Size(207, 29);
             this.lblSection.TabIndex = 23;
             this.lblSection.Text = "Non-Mileage Expense";
             // 
             // lblReceiptFile
             // 
             this.lblReceiptFile.AutoSize = true;
-            this.lblReceiptFile.Location = new System.Drawing.Point(5, 84);
-            this.lblReceiptFile.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblReceiptFile.Location = new System.Drawing.Point(7, 103);
             this.lblReceiptFile.Name = "lblReceiptFile";
-            this.lblReceiptFile.Size = new System.Drawing.Size(69, 13);
+            this.lblReceiptFile.Size = new System.Drawing.Size(90, 17);
             this.lblReceiptFile.TabIndex = 24;
             this.lblReceiptFile.Text = "Receipt File :";
             // 
             // txtReceiptFile
             // 
-            this.txtReceiptFile.Location = new System.Drawing.Point(92, 84);
-            this.txtReceiptFile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtReceiptFile.Location = new System.Drawing.Point(123, 103);
+            this.txtReceiptFile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtReceiptFile.Name = "txtReceiptFile";
             this.txtReceiptFile.ReadOnly = true;
-            this.txtReceiptFile.Size = new System.Drawing.Size(222, 20);
+            this.txtReceiptFile.Size = new System.Drawing.Size(295, 22);
             this.txtReceiptFile.TabIndex = 25;
             // 
             // panel2
@@ -320,36 +324,35 @@
             this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.txtExpenseCode);
-            this.panel2.Location = new System.Drawing.Point(-1, 264);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(-1, 325);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(320, 81);
+            this.panel2.Size = new System.Drawing.Size(427, 100);
             this.panel2.TabIndex = 26;
             // 
             // txtWriteInTotal
             // 
-            this.txtWriteInTotal.Location = new System.Drawing.Point(93, 59);
-            this.txtWriteInTotal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtWriteInTotal.Location = new System.Drawing.Point(124, 73);
+            this.txtWriteInTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtWriteInTotal.Name = "txtWriteInTotal";
-            this.txtWriteInTotal.Size = new System.Drawing.Size(76, 20);
+            this.txtWriteInTotal.Size = new System.Drawing.Size(100, 22);
             this.txtWriteInTotal.TabIndex = 17;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(7, 59);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(9, 73);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(77, 13);
+            this.label10.Size = new System.Drawing.Size(101, 17);
             this.label10.TabIndex = 16;
             this.label10.Text = "Write-In Total :";
             // 
             // btnCalculate
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(185, 240);
-            this.btnCalculate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCalculate.Location = new System.Drawing.Point(247, 295);
+            this.btnCalculate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCalculate.Name = "btnCalculate";
-            this.btnCalculate.Size = new System.Drawing.Size(73, 19);
+            this.btnCalculate.Size = new System.Drawing.Size(97, 23);
             this.btnCalculate.TabIndex = 27;
             this.btnCalculate.Text = "&Calculate";
             this.btnCalculate.UseVisualStyleBackColor = true;
@@ -358,21 +361,25 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(262, 240);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClear.Location = new System.Drawing.Point(349, 295);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(56, 19);
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 28;
             this.btnClear.Text = "C&lear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Visible = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // frmAddItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(323, 483);
+            this.ClientSize = new System.Drawing.Size(431, 594);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnCalculate);
             this.Controls.Add(this.panel2);
@@ -390,7 +397,7 @@
             this.Controls.Add(this.dtpReceiptDate);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblReceiptDate);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmAddItem";
             this.Text = "Add Expense Item";
             this.Load += new System.EventHandler(this.frmAddItem_Load);
@@ -434,5 +441,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnCalculate;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
