@@ -84,7 +84,7 @@ namespace Expense_Summary_App
             Chosen_File = openFileDialog1.FileName;
             receipt = Image.FromFile(Chosen_File);
             txtReceiptFile.Text = Chosen_File;
-                        
+                                    
         }
 
         //calculate button click event 

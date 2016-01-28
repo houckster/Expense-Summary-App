@@ -55,7 +55,7 @@
             this.colRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMileage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotalExpense = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReceiptImage = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Receipt = new System.Windows.Forms.DataGridViewLinkColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
@@ -212,7 +212,7 @@
             this.colRate,
             this.colMileage,
             this.colTotalExpense,
-            this.ReceiptImage,
+            this.Receipt,
             this.Edit,
             this.Delete});
             this.dataGridView1.Location = new System.Drawing.Point(26, 383);
@@ -330,13 +330,11 @@
             this.colTotalExpense.Name = "colTotalExpense";
             this.colTotalExpense.ReadOnly = true;
             // 
-            // ReceiptImage
+            // Receipt
             // 
-            this.ReceiptImage.HeaderText = "Receipt Image";
-            this.ReceiptImage.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.ReceiptImage.Name = "ReceiptImage";
-            this.ReceiptImage.ReadOnly = true;
-            this.ReceiptImage.Width = 200;
+            this.Receipt.HeaderText = "Receipt";
+            this.Receipt.Name = "Receipt";
+            this.Receipt.ReadOnly = true;
             // 
             // Edit
             // 
@@ -368,7 +366,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1710, 870);
             this.Controls.Add(this.panel2);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -416,7 +414,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colRate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMileage;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotalExpense;
-        private System.Windows.Forms.DataGridViewImageColumn ReceiptImage;
+        private System.Windows.Forms.DataGridViewLinkColumn Receipt;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }
