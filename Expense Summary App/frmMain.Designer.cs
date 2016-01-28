@@ -43,6 +43,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.colReceiptDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colExpenseCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,13 +55,9 @@
             this.colRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMileage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotalExpense = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReceiptImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -211,6 +212,7 @@
             this.colRate,
             this.colMileage,
             this.colTotalExpense,
+            this.ReceiptImage,
             this.Edit,
             this.Delete});
             this.dataGridView1.Location = new System.Drawing.Point(26, 383);
@@ -221,75 +223,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1633, 427);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.Tag = "ExpenseSummary";
-            // 
-            // colReceiptDate
-            // 
-            this.colReceiptDate.HeaderText = "Receipt Date";
-            this.colReceiptDate.Name = "colReceiptDate";
-            this.colReceiptDate.ReadOnly = true;
-            // 
-            // colDescription
-            // 
-            this.colDescription.HeaderText = "Description";
-            this.colDescription.Name = "colDescription";
-            this.colDescription.ReadOnly = true;
-            this.colDescription.Width = 500;
-            // 
-            // colExpenseCode
-            // 
-            this.colExpenseCode.HeaderText = "Expense Code";
-            this.colExpenseCode.Name = "colExpenseCode";
-            this.colExpenseCode.ReadOnly = true;
-            this.colExpenseCode.Width = 75;
-            // 
-            // colEnterMiles
-            // 
-            this.colEnterMiles.HeaderText = "Enter Miles";
-            this.colEnterMiles.Name = "colEnterMiles";
-            this.colEnterMiles.ReadOnly = true;
-            // 
-            // colRate
-            // 
-            this.colRate.HeaderText = "Rate";
-            this.colRate.Name = "colRate";
-            this.colRate.ReadOnly = true;
-            this.colRate.Width = 75;
-            // 
-            // colMileage
-            // 
-            this.colMileage.HeaderText = "Mileage $";
-            this.colMileage.Name = "colMileage";
-            this.colMileage.ReadOnly = true;
-            // 
-            // colTotalExpense
-            // 
-            this.colTotalExpense.HeaderText = "Total Expense";
-            this.colTotalExpense.Name = "colTotalExpense";
-            this.colTotalExpense.ReadOnly = true;
-            // 
-            // Edit
-            // 
-            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Edit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Edit.HeaderText = "Edit";
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Text = "Edit";
-            this.Edit.ToolTipText = "Click to edit row.";
-            this.Edit.UseColumnTextForButtonValue = true;
-            this.Edit.Width = 38;
-            // 
-            // Delete
-            // 
-            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Text = "Delete";
-            this.Delete.ToolTipText = "Click to delete row.";
-            this.Delete.UseColumnTextForButtonValue = true;
-            this.Delete.Width = 55;
             // 
             // label9
             // 
@@ -352,6 +285,83 @@
             this.panel2.Size = new System.Drawing.Size(1696, 1095);
             this.panel2.TabIndex = 13;
             // 
+            // colReceiptDate
+            // 
+            this.colReceiptDate.HeaderText = "Receipt Date";
+            this.colReceiptDate.Name = "colReceiptDate";
+            this.colReceiptDate.ReadOnly = true;
+            // 
+            // colDescription
+            // 
+            this.colDescription.HeaderText = "Description";
+            this.colDescription.Name = "colDescription";
+            this.colDescription.ReadOnly = true;
+            this.colDescription.Width = 500;
+            // 
+            // colExpenseCode
+            // 
+            this.colExpenseCode.HeaderText = "Expense Code";
+            this.colExpenseCode.Name = "colExpenseCode";
+            this.colExpenseCode.ReadOnly = true;
+            this.colExpenseCode.Width = 75;
+            // 
+            // colEnterMiles
+            // 
+            this.colEnterMiles.HeaderText = "Enter Miles";
+            this.colEnterMiles.Name = "colEnterMiles";
+            this.colEnterMiles.ReadOnly = true;
+            // 
+            // colRate
+            // 
+            this.colRate.HeaderText = "Rate";
+            this.colRate.Name = "colRate";
+            this.colRate.ReadOnly = true;
+            this.colRate.Width = 75;
+            // 
+            // colMileage
+            // 
+            this.colMileage.HeaderText = "Mileage $";
+            this.colMileage.Name = "colMileage";
+            this.colMileage.ReadOnly = true;
+            // 
+            // colTotalExpense
+            // 
+            this.colTotalExpense.HeaderText = "Total Expense";
+            this.colTotalExpense.Name = "colTotalExpense";
+            this.colTotalExpense.ReadOnly = true;
+            // 
+            // ReceiptImage
+            // 
+            this.ReceiptImage.HeaderText = "Receipt Image";
+            this.ReceiptImage.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.ReceiptImage.Name = "ReceiptImage";
+            this.ReceiptImage.ReadOnly = true;
+            this.ReceiptImage.Width = 200;
+            // 
+            // Edit
+            // 
+            this.Edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Edit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Edit.HeaderText = "Edit";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Text = "Edit";
+            this.Edit.ToolTipText = "Click to edit row.";
+            this.Edit.UseColumnTextForButtonValue = true;
+            this.Edit.Width = 38;
+            // 
+            // Delete
+            // 
+            this.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Text = "Delete";
+            this.Delete.ToolTipText = "Click to delete row.";
+            this.Delete.UseColumnTextForButtonValue = true;
+            this.Delete.Width = 55;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -398,6 +408,7 @@
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colReceiptDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn colExpenseCode;
@@ -405,9 +416,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colRate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMileage;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotalExpense;
+        private System.Windows.Forms.DataGridViewImageColumn ReceiptImage;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
-        private System.Windows.Forms.Panel panel2;
     }
 }
 

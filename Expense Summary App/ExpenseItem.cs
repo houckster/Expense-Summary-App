@@ -17,11 +17,11 @@ namespace Expense_Summary_App
         public string rate;
         public string totalExpense;
         public string mileageTotal;
-        //image -- TODO: figure out datatype for file later
+        public System.Drawing.Image receiptImage = null;
 
         //***Constructor that takes 8 arguments to assign all properties for Expense Item object.
         public ExpenseItem (string date1, string description1, string miles1, string expenseType1, 
-        string expenseCode1, string rate1, string totalExpense1, string mileageTotal1)
+        string expenseCode1, string rate1, string totalExpense1, string mileageTotal1, System.Drawing.Image receiptImage1)
         {
             date = date1;
             description = description1;
@@ -31,7 +31,7 @@ namespace Expense_Summary_App
             rate = rate1;
             totalExpense = totalExpense1;
             mileageTotal = mileageTotal1;
-            //image = image1
+            receiptImage = receiptImage1;
         }
 
         

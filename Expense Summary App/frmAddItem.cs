@@ -83,8 +83,8 @@ namespace Expense_Summary_App
 
             Chosen_File = openFileDialog1.FileName;
             receipt = Image.FromFile(Chosen_File);
-            //still need to assign to ExpenseItem object when submitted
-            
+            txtReceiptFile.Text = Chosen_File;
+                        
         }
 
         //calculate button click event 
@@ -170,7 +170,7 @@ namespace Expense_Summary_App
                     ExpenseItem expenseItem = new ExpenseItem(dtpReceiptDate.Text.ToString(),
                     txtDescription.Text.ToString(), txtTotalMiles.Text.ToString(), comboBox1.Text.ToString(),
                     txtExpenseCode.Text.ToString(), txtRate.Text.ToString(), txtTotalExpense.Text.ToString(),
-                    txtMileageTotal.Text.ToString());
+                    txtMileageTotal.Text.ToString(), receipt);
 
 
                     //call the method from the main form to send the object property values to the data 
@@ -194,7 +194,7 @@ namespace Expense_Summary_App
                     ExpenseItem expenseItem = new ExpenseItem(dtpReceiptDate.Text.ToString(),
                     txtDescription.Text.ToString(), txtTotalMiles.Text.ToString(), comboBox1.Text.ToString(),
                     txtExpenseCode.Text.ToString(), txtRate.Text.ToString(), txtTotalExpense.Text.ToString(),
-                    txtMileageTotal.Text.ToString());
+                    txtMileageTotal.Text.ToString(), receipt);
 
 
                     //call the method from the main form to send the object property values to the data 
