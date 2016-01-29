@@ -28,3 +28,5 @@ C:\Users\james.houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\ob
 C:\Users\james.houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\obj\Debug\Expense_Summary_App.frmAddItem.resources
 C:\Users\james.houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\obj\Debug\Expense_Summary_App.Properties.Resources.resources
 C:\Users\james.houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\obj\Debug\Expense Summary App.csproj.GenerateResource.Cache
+C:\Users\james.houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\bin\Debug\ExpenseItems.mdf
+C:\Users\james.houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\bin\Debug\ExpenseItems_log.ldf

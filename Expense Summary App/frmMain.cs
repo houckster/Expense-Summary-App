@@ -129,9 +129,17 @@ namespace Expense_Summary_App
             if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
             {
                 //TODO - when clicked, using the data grid view data, send the values to a new frmAddItem
-                MessageBox.Show("Hello");
+                //used "using" to ensure better consumption of system resources
+                using (var frmAddItem = new frmAddItem(this))
+                {
+                    frmAddItem.ShowDialog();
+                    //how do I get the datagrid values from the row into frmAddItem and then return them to same row?
+                    //Do I need a new method to pass the row to an expense object on frmMain, then pass to frmAddItem inputs?
+                    
+                }
             }
 
+            //Delete button
             if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
             {
                 // Initializes the variables to pass to the MessageBox.Show method.
