@@ -55,7 +55,7 @@
             this.colRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMileage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotalExpense = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Receipt = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.ReceiptImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
@@ -212,7 +212,7 @@
             this.colRate,
             this.colMileage,
             this.colTotalExpense,
-            this.Receipt,
+            this.ReceiptImage,
             this.Edit,
             this.Delete});
             this.dataGridView1.Location = new System.Drawing.Point(26, 383);
@@ -223,6 +223,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(1633, 427);
             this.dataGridView1.TabIndex = 7;
             this.dataGridView1.Tag = "ExpenseSummary";
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label9
             // 
@@ -330,11 +331,11 @@
             this.colTotalExpense.Name = "colTotalExpense";
             this.colTotalExpense.ReadOnly = true;
             // 
-            // Receipt
+            // ReceiptImage
             // 
-            this.Receipt.HeaderText = "Receipt";
-            this.Receipt.Name = "Receipt";
-            this.Receipt.ReadOnly = true;
+            this.ReceiptImage.HeaderText = "Receipt";
+            this.ReceiptImage.Name = "ReceiptImage";
+            this.ReceiptImage.ReadOnly = true;
             // 
             // Edit
             // 
@@ -414,7 +415,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colRate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMileage;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotalExpense;
-        private System.Windows.Forms.DataGridViewLinkColumn Receipt;
+        private System.Windows.Forms.DataGridViewImageColumn ReceiptImage;
         private System.Windows.Forms.DataGridViewButtonColumn Edit;
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
     }

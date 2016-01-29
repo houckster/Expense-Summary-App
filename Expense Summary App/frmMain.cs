@@ -12,7 +12,8 @@ namespace Expense_Summary_App
 {
     public partial class frmMain : Form
     {
-        //Instantiate a new instance of frmMain and intialize, open file dialog for CSV data import to simulate db
+        /*Instantiate a new instance of frmMain and intialize, open file dialog for CSV data import to simulate db.
+        When database is added, instead of importFIle method, it will connect to DB based on users Windows credentials*/
         public frmMain()
         {
             InitializeComponent();
@@ -32,36 +33,13 @@ namespace Expense_Summary_App
                 frmAddItem.ShowDialog();
             }
         }
-
-        //Edit button on datagridview
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            var senderGrid = (DataGridView)sender;
-
-            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
-                e.RowIndex >= 0)
-            {
-                //TODO - when clicked, using the data grid view data, send the values to a new frmAddItem
-
-                dataGridView1.Rows.RemoveAt(this.dataGridView1.SelectedRows[e.RowIndex].Index);
-            }
-        }
-
-        /*
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
-            {
-                dataGridView1.Rows.RemoveAt(this.dataGridView1.SelectedRows[e.RowIndex].Index);
-            }
-        }*/
-
+        
         #endregion
 
         #region Methods
 
-        //Method to call from frmAddItem to pass the values from the ExpenseItem object created 
-        //with the textbox input and send to the data grid view
+        /*Method to call from frmAddItem to pass the values from the ExpenseItem object created 
+        with the textbox input and send to the data grid view*/
         public void SendToGrid(ExpenseItem expenseItem)
         {
             DataGridViewRow row = (DataGridViewRow)dataGridView1.Rows[0].Clone();
@@ -72,6 +50,7 @@ namespace Expense_Summary_App
             row.Cells[4].Value = expenseItem.rate;
             row.Cells[5].Value = expenseItem.mileageTotal;
             row.Cells[6].Value = expenseItem.totalExpense;
+            row.Cells[7].Value = expenseItem.receiptImage;
             dataGridView1.Rows.Add(row);
         }
 
@@ -134,12 +113,50 @@ namespace Expense_Summary_App
 
          private void btnSave_Click(object sender, EventArgs e)
             {
-                //TODO: code to save datagridview to same CSV used to populate the data
+                /*TODO: code to save all additions to datagridview to database OR should this be handled when the
+                data is passed by the object to the datagrid? --I'm leaning this way.*/
             }
 
-        }
-        
         #endregion
-            
+
+        #region DataGridView Buttons
+        
+        //click event on datagridview
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            //Edit button
+            if (e.ColumnIndex == dataGridView1.Columns["Edit"].Index && e.RowIndex >= 0)
+            {
+                //TODO - when clicked, using the data grid view data, send the values to a new frmAddItem
+                MessageBox.Show("Hello");
+            }
+
+            if (e.ColumnIndex == dataGridView1.Columns["Delete"].Index && e.RowIndex >= 0)
+            {
+                // Initializes the variables to pass to the MessageBox.Show method.
+                string message = "By clicking yes, this expense item will be permanently removed from your record. Are you sure that you want to delete this?";
+                string caption = "Permanent Delete Warning";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result;
+
+                // Displays the MessageBox.
+                result = MessageBox.Show(message, caption, buttons);
+
+                //if yes is clicked, proceed with deletion
+                if (result == System.Windows.Forms.DialogResult.Yes)
+                {
+                    foreach (DataGridViewCell oneCell in dataGridView1.SelectedCells)
+                    {
+                        if (oneCell.Selected)
+                            dataGridView1.Rows.RemoveAt(oneCell.RowIndex);
+                        //TODO: delete from database
+                    }
+                }
+                
+            }
+        }
     }
+}
+        #endregion
 
