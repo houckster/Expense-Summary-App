@@ -30,3 +30,5 @@ C:\Users\james.houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\ob
 C:\Users\james.houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\obj\Debug\Expense Summary App.csproj.GenerateResource.Cache
 C:\Users\james.houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\bin\Debug\ExpenseItems.mdf
 C:\Users\james.houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\bin\Debug\ExpenseItems_log.ldf
+C:\Users\James Houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\bin\Debug\ExpenseItems.mdf
+C:\Users\James Houck\Documents\GitHub\Expense-Summary-App\Expense Summary App\bin\Debug\ExpenseItems_log.ldf

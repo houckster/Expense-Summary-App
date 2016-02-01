@@ -61,6 +61,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dat_ExpenseItems.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dat_ExpenseItems.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ExpenseItem.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -93,6 +98,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="ClassDiagram1.cd" />
+    <None Include="dat_ExpenseItems.xsc">
+      <DependentUpon>dat_ExpenseItems.xsd</DependentUpon>
+    </None>
+    <None Include="dat_ExpenseItems.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dat_ExpenseItems.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dat_ExpenseItems.xss">
+      <DependentUpon>dat_ExpenseItems.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
