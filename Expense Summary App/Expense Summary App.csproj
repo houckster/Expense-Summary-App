@@ -61,12 +61,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectionDB.cs" />
+    <Compile Include="dat_ExpenseItems.cs">
+      <DependentUpon>dat_ExpenseItems.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dat_ExpenseItems.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dat_ExpenseItems.xsd</DependentUpon>
     </Compile>
     <Compile Include="ExpenseItem.cs" />
+    <Compile Include="ExpenseItemsDB.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>

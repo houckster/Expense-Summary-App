@@ -7,21 +7,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Expense_Summary_App
 {
     public partial class frmMain : Form
     {
-        /*Instantiate a new instance of frmMain and intialize, open file dialog for CSV data import to simulate db.
-        When database is added, instead of importFIle method, it will connect to DB based on users Windows credentials*/
+        //Instantiate a new instance of frmMain and intialize
         public frmMain()
         {
             InitializeComponent();
-            ImportFile();
-            
         }
 
-        
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dat_ExpenseItems.tbl_ExpenseItems' table. You can move, or remove it, as needed.
+            try
+            {
+                this.tbl_ExpenseItemsTableAdapter.Fill(this.dat_ExpenseItems.tbl_ExpenseItems);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Database Error # " + ex.Number + ": " + ex.Message, ex.GetType().ToString());
+            }
+        }
+
+
         #region Buttons
 
         //Add Item button code, pops a new instance of AddItem form 
@@ -42,7 +53,7 @@ namespace Expense_Summary_App
         with the textbox input and send to the data grid view*/
         public void SendToGrid(ExpenseItem expenseItem)
         {
-            DataGridViewRow row = (DataGridViewRow)dataGridView1.Rows[0].Clone();
+            /*DataGridViewRow row = (DataGridViewRow)dataGridView1.Rows[0].Clone();
             row.Cells[0].Value = expenseItem.date;
             row.Cells[1].Value = expenseItem.description;
             row.Cells[2].Value = expenseItem.expenseCode;
@@ -51,71 +62,39 @@ namespace Expense_Summary_App
             row.Cells[5].Value = expenseItem.mileageTotal;
             row.Cells[6].Value = expenseItem.totalExpense;
             row.Cells[7].Value = expenseItem.receiptImage;
-            dataGridView1.Rows.Add(row);
+            dataGridView1.Rows.Add(row);*/
+
+            DataRow newRow = dat_ExpenseItems.tbl_ExpenseItems.NewRow();
+            newRow["receipt_date"] = expenseItem.date;
+            this.tblExpenseItemsBindingSource.EndEdit();
+            this.tbl_ExpenseItemsTableAdapter.Update(dat_ExpenseItems);
+            
         }
 
-        //method to import the CSV file that has expense summary data
-        private bool ImportFile()
+        private void btnSave_Click(object sender, EventArgs e)
         {
-            // Displays an OpenFileDialog so the user can select a Cursor.
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "CSV File|*.csv";
-            openFileDialog1.Title = "Select a CSV file";
-            openFileDialog1.ShowDialog();
-
+            //includes generic SQL and ADO.NET exception handling
             try
             {
-
-                String fName;
-                String textLine = string.Empty;
-                String[] splitLine;
-
-                // clear the grid view
-
-                dataGridView1.Rows.Clear();
-
-                fName = openFileDialog1.FileName;
-
-                if (System.IO.File.Exists(fName))
-                {
-                    System.IO.StreamReader objReader = new System.IO.StreamReader(fName);
-
-                    do
-                    {
-                        textLine = objReader.ReadLine();
-                        if (textLine != "")
-                        {
-                            splitLine = textLine.Split(',');
-                            if (splitLine[0] != "" || splitLine[1] != "")
-                            {
-                                dataGridView1.Rows.Add(splitLine);
-                            }
-                        }
-                    } while (objReader.Peek() != -1);
-                }
-                return true;
+                this.Validate();
+                this.tblExpenseItemsBindingSource.EndEdit();
+                this.tbl_ExpenseItemsTableAdapter.Update(dat_ExpenseItems);
             }
-            //to prevent crash if file is open 
-            catch (Exception ex)
+            catch (DBConcurrencyException)
             {
-                if (ex.Message.Contains("The process cannot access the file"))
-                {
-                    MessageBox.Show("The file you are importing is already open.", "System Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    MessageBox.Show(ex.Message);
-                }
-
-                return false;
+                MessageBox.Show("A concurrency error occured. " + "Some rows were not updated.", "Concurrecnt Exception");
+                this.tbl_ExpenseItemsTableAdapter.Fill(this.dat_ExpenseItems.tbl_ExpenseItems);
+            }
+            catch (DataException ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+                tblExpenseItemsBindingSource.CancelEdit();
+            }   
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Database Error # " + ex.Number + ": " + ex.Message, ex.GetType().ToString());
             }
         }
-
-         private void btnSave_Click(object sender, EventArgs e)
-            {
-                /*TODO: code to save all additions to datagridview to database OR should this be handled when the
-                data is passed by the object to the datagrid? --I'm leaning this way.*/
-            }
 
         #endregion
 
@@ -135,7 +114,8 @@ namespace Expense_Summary_App
                     frmAddItem.ShowDialog();
                     //how do I get the datagrid values from the row into frmAddItem and then return them to same row?
                     //Do I need a new method to pass the row to an expense object on frmMain, then pass to frmAddItem inputs?
-                    
+                    this.tblExpenseItemsBindingSource.EndEdit();
+                    this.tbl_ExpenseItemsTableAdapter.Update(dat_ExpenseItems);
                 }
             }
 
@@ -154,24 +134,16 @@ namespace Expense_Summary_App
                 //if yes is clicked, proceed with deletion
                 if (result == System.Windows.Forms.DialogResult.Yes)
                 {
-                    foreach (DataGridViewCell oneCell in dataGridView1.SelectedCells)
-                    {
-                        if (oneCell.Selected)
-                            dataGridView1.Rows.RemoveAt(oneCell.RowIndex);
-                        //TODO: delete from database
-                    }
+                    int rowIndex = e.RowIndex;
+                    dataGridView1.Rows.RemoveAt(rowIndex);
+                    dat_ExpenseItems.tbl_ExpenseItems.Rows[rowIndex].Delete();
+                    tbl_ExpenseItemsTableAdapter.Update(dat_ExpenseItems);//****data reappearing when app loaded again.
+                    this.tblExpenseItemsBindingSource.EndEdit();
                 }
-                
             }
-        }
-
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'dat_ExpenseItems.tbl_ExpenseItems' table. You can move, or remove it, as needed.
-            this.tbl_ExpenseItemsTableAdapter.Fill(this.dat_ExpenseItems.tbl_ExpenseItems);
-
         }
     }
 }
+
         #endregion
 

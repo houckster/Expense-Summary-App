@@ -10,6 +10,9 @@
 
 #pragma warning disable 1591
 
+using System;
+using System.Data;
+
 namespace Expense_Summary_App {
     
     
@@ -1783,6 +1786,16 @@ SELECT Id, first_name, last_name, vendor_code, start_date, end_date, receipt_dat
                     string Original_is_exported, 
                     global::System.Nullable<global::System.DateTime> Original_last_export__date) {
             return this.Update(first_name, last_name, vendor_code, start_date, end_date, receipt_date, description, expense_code, number_miles, rate, mileage_dollars, total_expense, receipt_image, is_exported, last_export__date, Original_Id, Original_first_name, Original_last_name, Original_vendor_code, Original_start_date, Original_end_date, Original_receipt_date, Original_description, Original_expense_code, Original_number_miles, Original_rate, Original_mileage_dollars, Original_total_expense, Original_is_exported, Original_last_export__date, Original_Id);
+        }
+
+        internal void Update(DataTable dataSource)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void Update(dat_ExpenseItems dat_ExpenseItems, string v)
+        {
+            throw new NotImplementedException();
         }
     }
     
