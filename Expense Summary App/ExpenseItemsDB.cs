@@ -10,6 +10,15 @@ namespace Expense_Summary_App
 {
     public static class ExpenseItemsDB 
     {
+        public static SqlConnection GetConnection()
+        {
+            string connectionString =
+                    "Data Source=(LocalDB)\\v11.0;AttachDbFilename=|DataDirectory|" +
+                        "\\ExpenseItems.mdf;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(connectionString);
+            return connection;
+        }
+
         public static ExpenseItem GetExpenseItem(int Id) 
         {
             SqlConnection connection = ExpenseItemsDB.GetConnection();

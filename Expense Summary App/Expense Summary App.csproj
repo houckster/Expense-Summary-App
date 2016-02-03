@@ -61,7 +61,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConnectionDB.cs" />
     <Compile Include="dat_ExpenseItems.cs">
       <DependentUpon>dat_ExpenseItems.xsd</DependentUpon>
     </Compile>
