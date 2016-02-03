@@ -31,6 +31,16 @@ namespace Expense_Summary_App
             selectCommand.Parameters.AddWithValue("@Id", Id);
             try
             {
+                connection.Open();
+                SqlDataReader expenseReader =
+                    selectCommand.ExecuteReader(System.Data.CommandBehavior.SingleRow);
+                if (expenseReader.Read())
+                {
+                    //public ExpenseItem (string date1, string description1, string miles1, string expenseType1, 
+                    //string expenseCode1, string rate1, string totalExpense1, string mileageTotal1, System.Drawing.Image receiptImage1)
+                    ExpenseItem expenseItem = new ExpenseItem();
+
+                }
 
             }
             catch (Exception)

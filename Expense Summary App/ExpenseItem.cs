@@ -33,10 +33,5 @@ namespace Expense_Summary_App
             mileageTotal = mileageTotal1;
             receiptImage = receiptImage1;
         }
-
-        
-
-
-
     }
 }
