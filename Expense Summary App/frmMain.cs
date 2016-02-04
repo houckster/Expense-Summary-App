@@ -101,7 +101,7 @@ namespace Expense_Summary_App
         #region DataGridView Buttons
         
         //click event on datagridview
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
             //Edit button
@@ -112,8 +112,11 @@ namespace Expense_Summary_App
                 using (var frmAddItem = new frmAddItem(this))
                 {
                     frmAddItem.ShowDialog();
+
                     //how do I get the datagrid values from the row into frmAddItem and then return them to same row?
                     //Do I need a new method to pass the row to an expense object on frmMain, then pass to frmAddItem inputs?
+                    ExpenseItemsDB.GetExpenseItem(System.Convert.ToInt32(dataGridView1.Columns[0]));
+                    
                     this.tblExpenseItemsBindingSource.EndEdit();
                     this.tbl_ExpenseItemsTableAdapter.Update(dat_ExpenseItems);
                 }
