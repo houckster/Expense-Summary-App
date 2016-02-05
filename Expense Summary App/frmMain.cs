@@ -19,6 +19,8 @@ namespace Expense_Summary_App
             InitializeComponent();
         }
 
+        public frmAddItem frmAddItem;
+
         private void frmMain_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'dat_ExpenseItems.tbl_ExpenseItems' table. You can move, or remove it, as needed.
@@ -112,11 +114,12 @@ namespace Expense_Summary_App
                 using (var frmAddItem = new frmAddItem(this))
                 {
                     frmAddItem.ShowDialog();
-
                     //how do I get the datagrid values from the row into frmAddItem and then return them to same row?
                     //Do I need a new method to pass the row to an expense object on frmMain, then pass to frmAddItem inputs?
-                    ExpenseItemsDB.GetExpenseItem(System.Convert.ToInt32(dataGridView1.Columns[0]));
+                    //ExpenseItemsDB.GetExpenseItem(System.Convert.ToInt32(this.idDataGridViewTextBoxColumn.ToString()));
+                    frmAddItem.SendDataToForm2(ExpenseItemsDB.GetExpenseItem(System.Convert.ToInt32(this.idDataGridViewTextBoxColumn.ToString())));
                     
+
                     this.tblExpenseItemsBindingSource.EndEdit();
                     this.tbl_ExpenseItemsTableAdapter.Update(dat_ExpenseItems);
                 }

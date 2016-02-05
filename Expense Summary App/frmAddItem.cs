@@ -259,6 +259,18 @@ namespace Expense_Summary_App
 
         #endregion
 
+        #region Method for Accepting ExpenseItem Object for Edit
+
+        public void SendDataToForm2(ExpenseItem expenseItem)
+        {
+            txtDescription.Text = expenseItem.description;
+            txtExpenseCode.Text = expenseItem.expenseCode;
+            txtMileageTotal.Text = expenseItem.mileageTotal;
+            txtRate.Text = expenseItem.rate;
+            
+        }
+
+        #endregion
     }
 
 }
