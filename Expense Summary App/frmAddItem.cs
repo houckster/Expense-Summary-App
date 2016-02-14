@@ -92,12 +92,12 @@ namespace Expense_Summary_App
         {
             if (checkBox1.Checked == true)
             {
-                txtRate.Text = "$0.575";
+                txtRate.Text = "0.575";
                 txtExpenseCode.Text = "a";
                 txtWriteInTotal.Text = "0";
                 totalExpense = rate * Convert.ToDouble(txtTotalMiles.Text.ToString());
-                txtTotalExpense.Text = totalExpense.ToString("c");
-                txtMileageTotal.Text = totalExpense.ToString("c");
+                txtTotalExpense.Text = totalExpense.ToString();
+                txtMileageTotal.Text = totalExpense.ToString();
             }
         }
 
@@ -120,9 +120,9 @@ namespace Expense_Summary_App
                 //perform data validation and proceed only if true is returned from method
                 if (NonMileageIsValidData())
                 {
-                    txtMileageTotal.Text = "NA";
-                    txtTotalMiles.Text = "NA";
-                    txtRate.Text = "NA";
+                    txtMileageTotal.Text = "0";
+                    txtTotalMiles.Text = "0";
+                    txtRate.Text = "0";
                     double totalExpense = 0.00;
                     totalExpense = Convert.ToDouble(txtWriteInTotal.Text);
                     txtTotalExpense.Text = totalExpense.ToString("c");

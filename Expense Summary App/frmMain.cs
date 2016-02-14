@@ -23,7 +23,7 @@ namespace Expense_Summary_App
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dat_ExpenseItems.tbl_ExpenseItems' table. You can move, or remove it, as needed.
+            // TODO: This line of code loads data into the 'dat_ExpenseItems.tbl_ExpenseItems' table. 
             try
             {
                 this.tbl_ExpenseItemsTableAdapter.Fill(this.dat_ExpenseItems.tbl_ExpenseItems);
@@ -66,8 +66,23 @@ namespace Expense_Summary_App
             row.Cells[7].Value = expenseItem.receiptImage;
             dataGridView1.Rows.Add(row);*/
 
+            DateTime? date = System.Convert.ToDateTime(expenseItem.date);
+            decimal miles = System.Convert.ToDecimal(expenseItem.miles);
+            decimal rate = System.Convert.ToDecimal(expenseItem.rate);
+            decimal mileageDollars = System.Convert.ToDecimal(expenseItem.mileageTotal);
+            Byte receipt = System.Convert.ToByte(expenseItem.receiptImage);
+            
+
+
             DataRow newRow = dat_ExpenseItems.tbl_ExpenseItems.NewRow();
-            newRow["receipt_date"] = expenseItem.date;
+            newRow["receipt_date"] = date;
+            newRow["description"] = expenseItem.description;
+            newRow["expense_code"] = expenseItem.expenseCode;
+            newRow["number_miles"] = miles;
+            newRow["rate"] = rate;
+            newRow["mileage_dollars"] = expenseItem.mileageTotal;
+            newRow["total_expense"] = expenseItem.totalExpense;
+            newRow["receipt_image"] = receipt;          
             this.tblExpenseItemsBindingSource.EndEdit();
             this.tbl_ExpenseItemsTableAdapter.Update(dat_ExpenseItems);
             
