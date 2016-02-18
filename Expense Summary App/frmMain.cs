@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace Expense_Summary_App
 {
@@ -23,7 +24,7 @@ namespace Expense_Summary_App
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dat_ExpenseItems.tbl_ExpenseItems' table. 
+            //This line of code loads data into the 'dat_ExpenseItems.tbl_ExpenseItems' table. 
             try
             {
                 this.tbl_ExpenseItemsTableAdapter.Fill(this.dat_ExpenseItems.tbl_ExpenseItems);
@@ -46,35 +47,43 @@ namespace Expense_Summary_App
                 frmAddItem.ShowDialog();
             }
         }
-        
+
         #endregion
 
         #region Methods
 
         /*Method to call from frmAddItem to pass the values from the ExpenseItem object created 
         with the textbox input and send to the data grid view*/
+        public byte[] imageToByteArray(System.Drawing.Image imageIn)
+        {
+            using (var ms = new MemoryStream())
+            {
+                imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                return ms.ToArray();
+            }
+        }
+
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
+        }
+
         public void SendToGrid(ExpenseItem expenseItem)
         {
-            /*DataGridViewRow row = (DataGridViewRow)dataGridView1.Rows[0].Clone();
-            row.Cells[0].Value = expenseItem.date;
-            row.Cells[1].Value = expenseItem.description;
-            row.Cells[2].Value = expenseItem.expenseCode;
-            row.Cells[3].Value = expenseItem.miles;
-            row.Cells[4].Value = expenseItem.rate;
-            row.Cells[5].Value = expenseItem.mileageTotal;
-            row.Cells[6].Value = expenseItem.totalExpense;
-            row.Cells[7].Value = expenseItem.receiptImage;
-            dataGridView1.Rows.Add(row);*/
-
             DateTime? date = System.Convert.ToDateTime(expenseItem.date);
             decimal miles = System.Convert.ToDecimal(expenseItem.miles);
             decimal rate = System.Convert.ToDecimal(expenseItem.rate);
             decimal mileageDollars = System.Convert.ToDecimal(expenseItem.mileageTotal);
-            Byte receipt = System.Convert.ToByte(expenseItem.receiptImage);
-            
 
-
+            //create the new row
             DataRow newRow = dat_ExpenseItems.tbl_ExpenseItems.NewRow();
+            newRow["first_name"] = txtFirstName.Text;
+            newRow["last_name"] = txtLastName.Text;
+            newRow["vendor_code"] = txtVendorCode.Text;
+            newRow["start_date"] = dateTimePicker1.Value;
+            newRow["end_date"] = dateTimePicker2.Value;
             newRow["receipt_date"] = date;
             newRow["description"] = expenseItem.description;
             newRow["expense_code"] = expenseItem.expenseCode;
@@ -82,9 +91,14 @@ namespace Expense_Summary_App
             newRow["rate"] = rate;
             newRow["mileage_dollars"] = expenseItem.mileageTotal;
             newRow["total_expense"] = expenseItem.totalExpense;
-            newRow["receipt_image"] = receipt;          
-            this.tblExpenseItemsBindingSource.EndEdit();
-            this.tbl_ExpenseItemsTableAdapter.Update(dat_ExpenseItems);
+            newRow["receipt_image"] = imageToByteArray(expenseItem.receiptImage);
+            newRow["is_exported"] = "No";
+            
+            //add the row to the table
+            this.dat_ExpenseItems.tbl_ExpenseItems.Rows.Add(newRow);
+
+            //Save the row to the database
+            this.tbl_ExpenseItemsTableAdapter.Update(this.dat_ExpenseItems.tbl_ExpenseItems);
             
         }
 
