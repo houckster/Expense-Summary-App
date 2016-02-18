@@ -58,8 +58,16 @@ namespace Expense_Summary_App
         {
             using (var ms = new MemoryStream())
             {
-                imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                return ms.ToArray();
+                if (imageIn == null)
+                {
+                    imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    return ms.ToArray();
+                }
+                else
+                {
+                    return null;
+                }
+                
             }
         }
 
@@ -91,9 +99,19 @@ namespace Expense_Summary_App
             newRow["rate"] = rate;
             newRow["mileage_dollars"] = expenseItem.mileageTotal;
             newRow["total_expense"] = expenseItem.totalExpense;
-            newRow["receipt_image"] = imageToByteArray(expenseItem.receiptImage);
             newRow["is_exported"] = "No";
-            
+
+            if (expenseItem.receiptImage != null)
+            {
+                newRow["receipt_image"] = imageToByteArray(expenseItem.receiptImage);
+            }
+            else
+            {
+                newRow["receipt_image"] = null;
+            }
+
+
+
             //add the row to the table
             this.dat_ExpenseItems.tbl_ExpenseItems.Rows.Add(newRow);
 
@@ -142,13 +160,15 @@ namespace Expense_Summary_App
                 //used "using" to ensure better consumption of system resources
                 using (var frmAddItem = new frmAddItem(this))
                 {
+                    ExpenseItem expenseItem = ExpenseItemsDB.GetExpenseItem(System.Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                    frmAddItem.SendDataToForm2(expenseItem);
                     frmAddItem.ShowDialog();
                     //how do I get the datagrid values from the row into frmAddItem and then return them to same row?
                     //Do I need a new method to pass the row to an expense object on frmMain, then pass to frmAddItem inputs?
                     //ExpenseItemsDB.GetExpenseItem(System.Convert.ToInt32(this.idDataGridViewTextBoxColumn.ToString()));
-                    frmAddItem.SendDataToForm2(ExpenseItemsDB.GetExpenseItem(System.Convert.ToInt32(this.idDataGridViewTextBoxColumn.ToString())));
                     
-
+                    frmAddItem.SendDataToForm2(expenseItem);
+                    
                     this.tblExpenseItemsBindingSource.EndEdit();
                     this.tbl_ExpenseItemsTableAdapter.Update(dat_ExpenseItems);
                 }

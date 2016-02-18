@@ -42,8 +42,10 @@ namespace Expense_Summary_App
                     System.IO.MemoryStream stream = new System.IO.MemoryStream(data);
                     System.Drawing.Image receiptImage = System.Drawing.Image.FromStream(stream);
 
-                    ExpenseItem expenseItem = new ExpenseItem(expenseReader["receipt_date"].ToString(), expenseReader["description"].ToString(), expenseReader["number_miles"].ToString(),
-                        expenseReader[null].ToString(), expenseReader["expense_code"].ToString(), expenseReader["rate"].ToString(), expenseReader["total_expense"].ToString(), 
+                    ExpenseItem expenseItem = new ExpenseItem(expenseReader["receipt_date"].ToString(), expenseReader["description"].ToString(), 
+                        expenseReader["number_miles"].ToString(),
+                        expenseReader[null].ToString(), expenseReader["expense_code"].ToString(), expenseReader["rate"].ToString(), 
+                        expenseReader["total_expense"].ToString(), 
                         expenseReader["number_miles"].ToString(), receiptImage);
                     return expenseItem;
                 }

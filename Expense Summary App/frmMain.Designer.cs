@@ -44,6 +44,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tblExpenseItemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dat_ExpenseItems = new Expense_Summary_App.dat_ExpenseItems();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tbl_ExpenseItemsTableAdapter = new Expense_Summary_App.dat_ExpenseItemsTableAdapters.tbl_ExpenseItemsTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,14 +70,6 @@
             this.lastexportdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.tblExpenseItemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dat_ExpenseItems = new Expense_Summary_App.dat_ExpenseItems();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.tbl_ExpenseItemsTableAdapter = new Expense_Summary_App.dat_ExpenseItemsTableAdapters.tbl_ExpenseItemsTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblExpenseItemsBindingSource)).BeginInit();
@@ -249,13 +249,88 @@
             this.dataGridView1.Tag = "ExpenseSummary";
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // tblExpenseItemsBindingSource
+            // 
+            this.tblExpenseItemsBindingSource.DataMember = "tbl_ExpenseItems";
+            this.tblExpenseItemsBindingSource.DataSource = this.dat_ExpenseItems;
+            // 
+            // dat_ExpenseItems
+            // 
+            this.dat_ExpenseItems.DataSetName = "dat_ExpenseItems";
+            this.dat_ExpenseItems.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.White;
+            this.label9.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label9.Location = new System.Drawing.Point(29, 351);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(59, 29);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "Items";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(31, 844);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(329, 17);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "©2016 Bell Lumber and Pole.   Developed by James Houck   v1.0";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(11, 5);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1665, 254);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(11, 338);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(1665, 684);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 12;
+            this.pictureBox3.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.btnSave);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.pictureBox3);
+            this.panel2.Location = new System.Drawing.Point(7, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1691, 900);
+            this.panel2.TabIndex = 13;
+            // 
+            // tbl_ExpenseItemsTableAdapter
+            // 
+            this.tbl_ExpenseItemsTableAdapter.ClearBeforeFill = true;
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
             this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
             // 
             // firstnameDataGridViewTextBoxColumn
             // 
@@ -389,82 +464,6 @@
             this.Delete.ToolTipText = "Click to delete row.";
             this.Delete.UseColumnTextForButtonValue = true;
             this.Delete.Width = 55;
-            // 
-            // tblExpenseItemsBindingSource
-            // 
-            this.tblExpenseItemsBindingSource.DataMember = "tbl_ExpenseItems";
-            this.tblExpenseItemsBindingSource.DataSource = this.dat_ExpenseItems;
-            // 
-            // dat_ExpenseItems
-            // 
-            this.dat_ExpenseItems.DataSetName = "dat_ExpenseItems";
-            this.dat_ExpenseItems.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label9.Location = new System.Drawing.Point(29, 351);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 29);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "Items";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(31, 844);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(329, 17);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "©2016 Bell Lumber and Pole.   Developed by James Houck   v1.0";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(11, 5);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1665, 254);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(11, 338);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(1665, 684);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 12;
-            this.pictureBox3.TabStop = false;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.btnSave);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.panel1);
-            this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Location = new System.Drawing.Point(7, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1691, 900);
-            this.panel2.TabIndex = 13;
-            // 
-            // tbl_ExpenseItemsTableAdapter
-            // 
-            this.tbl_ExpenseItemsTableAdapter.ClearBeforeFill = true;
             // 
             // frmMain
             // 

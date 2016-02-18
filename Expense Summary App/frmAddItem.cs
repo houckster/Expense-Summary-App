@@ -267,7 +267,6 @@ namespace Expense_Summary_App
             txtExpenseCode.Text = expenseItem.expenseCode;
             txtMileageTotal.Text = expenseItem.mileageTotal;
             txtRate.Text = expenseItem.rate;
-            
         }
 
         #endregion
